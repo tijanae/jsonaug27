@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ColorViewController: UIViewController {
+class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
+    @IBOutlet weak var colorTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        colorTableView.delegate = self
+        colorTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -26,5 +31,13 @@ class ColorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
 }
