@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RandomUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RandomUserViewController: UIViewController, UITableViewDelegate {
     
     
 
@@ -17,7 +17,7 @@ class RandomUserViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         randoUserTableView.delegate = self
-        randoUserTableView.dataSource = self
+        //randoUserTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -31,13 +31,6 @@ class RandomUserViewController: UIViewController, UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+   
 
 }

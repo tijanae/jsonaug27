@@ -14,7 +14,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var weatherTableView: UITableView!
     
-    var weatherData = [Weather]()
+    var weatherData = [listInfo]() {
+        didSet {
+            weatherTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,29 +34,25 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let url = URL(fileURLWithPath: pathToJSONFile)
         do{
-//            let data = try Data(contentsOf: url)
-//            let weatherDataFromJSON try Weather
+            let data = try Data(contentsOf: url)
+            self.weatherData = try Weather.getWeatherData(from: data)
+        }catch{
+            print(error)
         }
         
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return weatherData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let weatherInfo = weatherData[indexPath.row]
+        let weatherCell = weatherTableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
+        weatherCell.textLabel?.text = weatherInfo.name
+        return weatherCell
     }
 
 }

@@ -9,14 +9,48 @@
 import Foundation
 import UIKit
 
-enum colorJSON {
+enum colorJSON: Error {
     case decodingError(Error)
 }
 
 struct Color: Codable {
-    let name: String
-    let hexValue: String
-    let red: CGFloat
-    let green: CGFloat
-    let blue: CGFloat
+    
+    let colors: [colorInfo]
+    
+    static func getColorData(from data: Data) throws -> [colorInfo]{
+        do {
+            let color = try JSONDecoder().decode(Color.self, from: data)
+            return color.colors
+        } catch {
+            throw colorJSON.decodingError(error)
+        }
+    }
+   
+
+}
+
+struct colorInfo: Codable {
+    
+    let hex: HexInfo
+    let rgb: RgbInfo
+    let name: NameInfo
+}
+
+struct HexInfo: Codable {
+    let value: String
+    let clean: String
+}
+
+struct RgbInfo: Codable {
+    let fraction: FractionInfo
+}
+
+struct FractionInfo: Codable {
+    let r: CGFloat
+    let g: CGFloat
+    let b: CGFloat
+}
+
+struct NameInfo: Codable {
+    let value: String
 }

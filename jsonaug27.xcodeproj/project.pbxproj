@@ -113,6 +113,9 @@
 		4E150F702315AFAC0071AF87 /* jsonaug27 */ = {
 			isa = PBXGroup;
 			children = (
+				4E85ACB12315E08B005A502C /* weatherData.json */,
+				4E85AC9D2315CF1D005A502C /* colorData.json */,
+				4E85AC9F2315CFA9005A502C /* userData.json */,
 				4E85ACA42315D2B7005A502C /* Models */,
 				4E150F9F2315AFBF0071AF87 /* controllers */,
 				4E150F752315AFAC0071AF87 /* Main.storyboard */,
@@ -156,9 +159,6 @@
 		4E85ACA12315CFBF005A502C /* jsonData */ = {
 			isa = PBXGroup;
 			children = (
-				4E85ACB12315E08B005A502C /* weatherData.json */,
-				4E85AC9D2315CF1D005A502C /* colorData.json */,
-				4E85AC9F2315CFA9005A502C /* userData.json */,
 			);
 			path = jsonData;
 			sourceTree = "<group>";
