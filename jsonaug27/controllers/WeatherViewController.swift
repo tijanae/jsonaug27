@@ -54,5 +54,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         weatherCell.textLabel?.text = weatherInfo.name
         return weatherCell
     }
+    
+    
 
 }

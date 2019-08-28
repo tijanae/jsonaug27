@@ -6,7 +6,7 @@
                 "title": "mr",
                 "first": "giray",
                 "last": "akbulut"
-            },
+                },
             "location": {
                 "street": "2836 talak göktepe cd",
                 "city": "gümüşhane",
@@ -15,12 +15,12 @@
                 "coordinates": {
                     "latitude": "74.4008",
                     "longitude": "-10.8601"
-                },
+                    },
                 "timezone": {
                     "offset": "+8:00",
                     "description": "Beijing, Perth, Singapore, Hong Kong"
-                }
-            },
+                    }
+                },
             "email": "giray.akbulut@example.com",
             "login": {
                 "uuid": "70d44578-4105-4840-a5a6-1ed09f64bb0e",
@@ -30,26 +30,26 @@
                 "md5": "d65cfe23e4e04063795d4e16045bb00d",
                 "sha1": "9156f457845236eff05b95d1eac424202effeb6e",
                 "sha256": "9ecda120678eef5c57663193f6240dfefeaace245b282d1bc386372b078410ee"
-            },
+                },
             "dob": {
                 "date": "1991-09-08T19:38:22Z",
                 "age": 27
-            },
+                },
             "registered": {
                 "date": "2015-10-16T14:41:51Z",
                 "age": 3
-            },
+                },
             "phone": "(694)-276-0998",
             "cell": "(433)-386-1714",
             "id": {
                 "name": "",
                 "value": null
-            },
+                },
             "picture": {
                 "large": "https://randomuser.me/api/portraits/men/0.jpg",
                 "medium": "https://randomuser.me/api/portraits/med/men/0.jpg",
                 "thumbnail": "https://randomuser.me/api/portraits/thumb/men/0.jpg"
-            },
+                },
             "nat": "TR"
         },
         {

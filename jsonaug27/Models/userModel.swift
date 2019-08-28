@@ -12,10 +12,44 @@ enum UserJSONError: Error {
     case decodingError(Error)
 }
 
-struct User {
-    let name: String
+struct User: Codable {
+
+    let results: [UserInfo]
+    
+    static func getUserData(from data: Data) throws -> [UserInfo]{
+        do{
+          let users = try JSONDecoder().decode(User.self, from: data)
+            return users.results
+        } catch {
+            throw UserJSONError.decodingError(error)
+        }
+    }
+}
+
+struct UserInfo: Codable {
+    
+    let name: UserNameInfo
     let email: String
-    let address: String
-    let phoneNumber: String
-    let dateOfBirth: String
+    let location: LocationInfo
+    let dob: DobInfo
+    let phone: String
+}
+
+struct UserNameInfo: Codable {
+    
+    let title: String
+    let first: String
+    let last: String
+}
+
+struct LocationInfo: Codable {
+    let street: String
+    let city: String
+    let state: String
+    
+}
+
+struct DobInfo: Codable {
+    let date: String
+    let age: Int
 }

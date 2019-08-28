@@ -27,7 +27,7 @@ struct Weather: Codable {
     }
     
     
-    
+
     
 }
 
