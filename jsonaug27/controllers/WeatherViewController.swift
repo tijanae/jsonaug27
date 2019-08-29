@@ -42,7 +42,25 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else{
+            fatalError("Unexpected Error: No Identifier in segue")
+        }
+        
+        switch segueIdentifier {
+        case "weatherMainToDetailSegue":
+            guard let weatherDetailsVc = segue.destination as? WeatherDetailViewController else{
+                fatalError("Unexpected Error: No VC")
+            }
+            guard let selectedIndexPath = self.weatherTableView.indexPathForSelectedRow else{
+                fatalError("Unexpected Error: No Row Selected")
+            }
+            weatherDetailsVc.weatherDetailInfo = weatherData[selectedIndexPath.row]
+            
+        default:
+            fatalError("Unexpected Identifier")
+        }
+    }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherData.count

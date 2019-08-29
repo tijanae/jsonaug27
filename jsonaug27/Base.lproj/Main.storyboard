@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Br6-8V-ibV" kind="show" id="WYd-Kh-LKe"/>
+                                            <segue destination="Br6-8V-ibV" kind="show" identifier="colorMainToDetailSegue" id="WYd-Kh-LKe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="3.3482142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Detail View Controller-->
         <scene sceneID="V70-SC-FY6">
             <objects>
-                <viewController id="Br6-8V-ibV" sceneMemberID="viewController">
+                <viewController id="Br6-8V-ibV" customClass="ColorDetailViewController" customModule="jsonaug27" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cz3-pk-5OY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="try-qV-XiX" kind="show" id="Wyp-CU-1Mr"/>
+                                            <segue destination="try-qV-XiX" kind="show" identifier="weatherMainToDetailSegue" id="Wyp-CU-1Mr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -151,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="806" y="-705"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather Detail View Controller-->
         <scene sceneID="zDw-UV-xBu">
             <objects>
-                <viewController id="try-qV-XiX" sceneMemberID="viewController">
+                <viewController id="try-qV-XiX" customClass="WeatherDetailViewController" customModule="jsonaug27" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vPN-3N-i6X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,17 +177,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5B-YC-vmt">
-                                <rect key="frame" x="78" y="420" width="240" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rnb-9b-PeC"/>
                     </view>
+                    <connections>
+                        <outlet property="weatherCityLabel" destination="H9C-l3-nFf" id="jBp-wv-Wn3"/>
+                        <outlet property="weatherImage" destination="0Tw-cd-NIn" id="GPU-lN-jDa"/>
+                        <outlet property="weatherTempLabel" destination="Lgl-IG-NnG" id="JGz-7j-FVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-W7-0Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,7 +265,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="q2J-fH-EYg" kind="show" id="hYI-pH-WO9"/>
+                                            <segue destination="q2J-fH-EYg" kind="show" identifier="userMainToDetailSegue" id="hYI-pH-WO9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -291,10 +289,10 @@
             </objects>
             <point key="canvasLocation" x="806" y="712"/>
         </scene>
-        <!--View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="rHN-KS-3xf">
             <objects>
-                <viewController id="q2J-fH-EYg" sceneMemberID="viewController">
+                <viewController id="q2J-fH-EYg" customClass="UserDetailViewController" customModule="jsonaug27" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="trz-Rh-ww5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
