@@ -23,8 +23,9 @@ class WeatherDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        weatherCityLabel.text = weatherDetailInfo.name
-        weatherTempLabel.text = String(weatherDetailInfo.main.temp)
+        weatherCityLabel.text = "City: \(weatherDetailInfo.name)"
+        weatherTempLabel.text = "Celcius: \(weatherDetailInfo.main.temp)"
+        weatherImage.image = UIImage(named: "rain")
         
         // Do any additional setup after loading the view.
     }

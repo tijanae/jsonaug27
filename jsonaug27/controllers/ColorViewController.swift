@@ -39,6 +39,26 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else{
+            fatalError("Unexpected Error: No identifier in segue")
+        }
+        
+        switch segueIdentifier {
+        case "colorMainToDetailSegue":
+            guard let colorDetailVC = segue.destination as? ColorDetailViewController else{
+                fatalError("Unexpected Error: No VC")
+            }
+            guard let selectedIndexPath = self.colorTableView.indexPathForSelectedRow else{
+                fatalError("Unexpected Error: ")
+                }
+            colorDetailVC.colorDetailInfo = colorData[selectedIndexPath.row]
+        default:
+            fatalError("Unexpected Error")
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colorData.count
     }

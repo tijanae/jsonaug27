@@ -41,7 +41,9 @@ class RandomUserViewController: UIViewController, UITableViewDelegate, UITableVi
             fatalError("Unexpected Error")
         }
     }
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userData.count

@@ -43,6 +43,9 @@ struct HexInfo: Codable {
 
 struct RgbInfo: Codable {
     let fraction: FractionInfo
+    let r: Int
+    let g: Int
+    let b: Int
 }
 
 struct FractionInfo: Codable {

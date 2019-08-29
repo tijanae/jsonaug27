@@ -9,9 +9,25 @@
 import UIKit
 
 class ColorDetailViewController: UIViewController {
+    
+    var colorDetailInfo: colorInfo!
 
+    @IBOutlet weak var colorDetailUIView: UIImageView!
+    
+    
+    @IBOutlet weak var colorNameLabel: UILabel!
+    
+    @IBOutlet weak var colorHexLabel: UILabel!
+    
+    @IBOutlet weak var colorRGBLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorNameLabel.text = ("COLOR NAME: \(colorDetailInfo.name.value)")
+        colorHexLabel.text = ("HEX: \(colorDetailInfo.hex.value)")
+        colorDetailUIView.backgroundColor = UIColor (red: colorDetailInfo.rgb.fraction.r, green: colorDetailInfo.rgb.fraction.g, blue: colorDetailInfo.rgb.fraction.b, alpha: 1)
+        colorRGBLabel.text = ("RGB Values: R: \(colorDetailInfo.rgb.r), G: \(colorDetailInfo.rgb.g), B: \(colorDetailInfo.rgb.b)")
 
         // Do any additional setup after loading the view.
     }

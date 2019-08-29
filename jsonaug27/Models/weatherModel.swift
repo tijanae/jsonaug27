@@ -45,3 +45,4 @@ struct weatherInfo: Codable {
     let main: String
     let description: String
 }
+
